@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sudoku Petualangan</title>
+  <link rel="icon" href="icons/compass.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <!-- BERANDA -->
+    <section id="home" class="screen">
+      <h1>Sudoku Petualangan</h1>
+
+      <div class="card">
+        <input id="nameInput" type="text" maxlength="16" placeholder="Nama" autocomplete="off" aria-label="Nama">
+
+        <div class="seg" id="diffSeg">
+          <button data-diff="easy">Mudah</button>
+          <button data-diff="medium" class="on">Sedang</button>
+          <button data-diff="hard">Sulit</button>
+        </div>
+
+        <button id="btnPlay" class="btn primary">Main</button>
+        <p id="formMsg" class="msg"></p>
+      </div>
+
+      <div class="card">
+        <h2>Rekor terbaik</h2>
+        <ul class="rec" id="records"></ul>
+      </div>
+    </section>
+
+    <!-- PERMAINAN -->
+    <section id="game" class="screen hidden">
+      <div class="topbar">
+        <button id="btnBack" class="chip">&larr; Keluar</button>
+        <div class="timer" id="timer">00:00.0</div>
+        <div class="tag" id="gameTag">Sedang</div>
+      </div>
+
+      <div class="board" id="board" aria-label="Papan sudoku"></div>
+
+      <div class="tools">
+        <button id="btnNotes" class="tool">Catatan: mati</button>
+        <button id="btnErase" class="tool">Hapus</button>
+      </div>
+
+      <div class="palette" id="palette"></div>
+    </section>
+  </main>
+
+  <!-- HASIL -->
+  <div id="result" class="overlay hidden">
+    <div class="modal">
+      <h2>Selesai</h2>
+      <div class="big-time" id="resTime"></div>
+      <p id="resRank" class="res-rank"></p>
+      <div class="actions">
+        <button id="btnAgain" class="btn primary">Main lagi</button>
+        <button id="btnHome" class="btn soft">Beranda</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
