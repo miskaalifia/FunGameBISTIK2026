@@ -127,3 +127,12 @@ h1{font-family:'Fredoka',sans-serif;font-weight:700;font-size:2rem;text-align:ce
 .msg{margin:0;min-height:0}
 .msg:empty{display:none}
 .modal .actions{margin-top:16px}
+
+/* kompatibilitas Safari iOS: ukuran persegi tanpa aspect-ratio */
+.cell,.pal{display:block;width:100%;height:0;aspect-ratio:auto}
+.cell{padding:0 0 100% 0}
+.pal{padding:0 0 124% 0}
+.cell img.v{position:absolute;left:9%;top:9%;width:82%;height:82%}
+.notes{position:absolute;left:4%;top:4%;width:92%;height:92%}
+.pal img{position:absolute;left:10%;top:10%;width:80%;height:80%}
+.cell.sel{transform:scale(1.1)}

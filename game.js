@@ -176,7 +176,7 @@ const BOX_ORDER = [];
     const br = Math.floor(b / 3) * 3, bc = (b % 3) * 3;
     for (let k = 0; k < 9; k++) {
       const r = br + Math.floor(k / 3), c = bc + (k % 3), i = r * 9 + c;
-      const el = document.createElement('button'); el.className = 'cell'; el.type = 'button';
+      const el = document.createElement('div'); el.className = 'cell'; el.setAttribute('role', 'button');
       el.addEventListener('click', () => select(i));
       cells[i] = el; box.appendChild(el);
     }
@@ -185,7 +185,7 @@ const BOX_ORDER = [];
 })();
 const pal = $('#palette');
 for (let d = 1; d <= 9; d++) {
-  const b = document.createElement('button'); b.className = 'pal'; b.type = 'button'; b.title = ICON_NAMES[d - 1];
+  const b = document.createElement('div'); b.className = 'pal'; b.setAttribute('role', 'button'); b.title = ICON_NAMES[d - 1];
   b.innerHTML = `<img src="${iconSrc(d)}" alt="${ICON_NAMES[d - 1]}"><span class="cnt"></span>`;
   b.addEventListener('click', () => place(d));
   pal.appendChild(b);
